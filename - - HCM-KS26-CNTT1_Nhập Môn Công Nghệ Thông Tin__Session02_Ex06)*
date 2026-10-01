@@ -1,0 +1,86 @@
+
+BÀI TẬP: HỆ THỐNG GIÁM SÁT TRANG TRẠI LAN THÔNG MINH
+PHẦN 1: PHÂN TÍCH THEO MÔ HÌNH IPO (INPUT – PROCESS – OUTPUT)
+Câu 1. Xác định các thành phần Input, Process, Output và Storage của hệ thống
+Dựa vào hình ảnh và đề bài, em xác định các thành phần của hệ thống như sau:
+Thành phần
+Nội dung
+Input (Đầu vào)
+Cảm biến IoT thu thập nhiệt độ và độ ẩm của trang trại cứ 5 phút một lần. Camera HD ghi lại hình ảnh và truyền dữ liệu về máy chủ thông qua mạng Internet.
+Process (Xử lý)
+CPU tiếp nhận dữ liệu từ cảm biến và camera, sau đó xử lý theo chương trình đã cài đặt. Khi nhiệt độ vượt quá 35°C, hệ thống sẽ gửi lệnh bật máy phun sương và đồng thời kích hoạt chức năng cảnh báo.
+Output (Đầu ra)
+Máy phun sương tự động bật khi nhiệt độ vượt quá 35°C. Điện thoại của người quản lý nhận được thông báo để kịp thời theo dõi tình hình trang trại.
+Storage (Lưu trữ)
+RAM lưu tạm thời dữ liệu trong quá trình xử lý. Ổ cứng HDD lưu dữ liệu cảm biến hằng ngày. Ngoài ra, cơ sở dữ liệu đám mây có thể được sử dụng để lưu trữ và truy cập dữ liệu từ xa.
+
+Quy trình hoạt động của hệ thống:
+Cảm biến IoT sẽ thu thập dữ liệu nhiệt độ và độ ẩm, sau đó gửi về máy chủ. CPU tiếp nhận dữ liệu và kiểm tra xem nhiệt độ có vượt quá 35°C hay không. Nếu vượt ngưỡng, hệ thống sẽ tự động bật máy phun sương và gửi thông báo đến điện thoại của người quản lý. Dữ liệu sau khi thu thập cũng được lưu lại để phục vụ việc theo dõi và kiểm tra khi cần.
+Câu 2. Mô tả quy trình xử lý theo 3 bước IPO khi nhiệt độ vượt quá 35°C
+Bước
+Nội dung
+Input (Đầu vào)
+Cảm biến nhiệt độ phát hiện nhiệt độ trong trang trại vượt quá 35°C và gửi tín hiệu đến bộ điều khiển trung tâm.
+Process (Xử lý)
+CPU tiếp nhận dữ liệu, so sánh với ngưỡng nhiệt độ 35°C đã được cài đặt. Khi phát hiện nhiệt độ vượt ngưỡng, CPU gửi lệnh bật máy phun sương và yêu cầu hệ thống gửi cảnh báo.
+Output (Đầu ra)
+Máy phun sương được kích hoạt để hỗ trợ làm mát khu vực trồng lan. Đồng thời, điện thoại của người quản lý nhận được thông báo về tình trạng nhiệt độ.
+
+Như vậy, khi nhận được tín hiệu nhiệt độ vượt quá 35°C, hệ thống có thể tự động xử lý mà không cần người quản lý trực tiếp thao tác. Điều này giúp người quản lý phát hiện và xử lý tình huống kịp thời hơn.
+PHẦN 2: TÍNH TOÁN DUNG LƯỢNG LƯU TRỮ
+Câu 3. Tính dung lượng lưu trữ trong một năm và xác định ổ cứng 1 TB có đủ hay không
+Theo đề bài, mỗi ngày hệ thống tạo ra 50 MB dữ liệu và cần lưu trữ trong 365 ngày.
+Bước 1: Tính tổng dung lượng dữ liệu trong một năm.
+50 ×  365 = 18.250 MB
+Bước 2: Quy đổi từ MB sang GB.
+Vì 1 GB = 1024 MB nên:
+18.250÷ 1024 ≈ 17,82 GB  
+Bước 3: So sánh với dung lượng ổ cứng.
+Ổ cứng 1 TB có dung lượng:
+1 ×  1024 = 1024 GB
+Trong khi đó, dữ liệu cảm biến trong một năm chỉ cần khoảng 17,82 GB. Vì vậy, ổ cứng 1 TB hoàn toàn đủ để lưu trữ lượng dữ liệu cảm biến này.
+Kết quả:
+Dung lượng dữ liệu trong một năm: 18.250 MB.
+Dung lượng quy đổi: Khoảng 17,82 GB.
+Ổ cứng 1 TB HDD: Đủ dung lượng lưu trữ dữ liệu cảm biến trong một năm.
+Tuy nhiên, nếu hệ thống còn lưu video từ camera HD thì cần tính thêm dung lượng dành cho video. Vì vậy, dù ổ cứng đủ để lưu dữ liệu cảm biến, vẫn cần theo dõi dung lượng thực tế để tránh bị đầy ổ cứng.
+Câu 4. Tính tốc độ truyền dữ liệu và thời gian tải video
+Theo đề bài, camera HD sử dụng đường truyền có tốc độ 20 Mbps. Cần quy đổi tốc độ này sang MB/s và tính thời gian tải video có dung lượng 150 MB.
+Bước 1: Quy đổi tốc độ từ Mbps sang MB/s.
+Ta có 1 byte = 8 bit.
+Do đó, tốc độ truyền dữ liệu là:
+20÷ 8= 2,5 MB/s
+Bước 2: Tính thời gian tải video 150 MB.
+Thời gian tải được tính bằng dung lượng video chia cho tốc độ truyền dữ liệu.
+150÷2,5=60
+Kết quả:
+Tốc độ truyền dữ liệu: 2,5 MB/s.
+Thời gian tải video 150 MB: 60 giây (1 phút).
+Đây là thời gian tính theo lý thuyết khi đường truyền luôn đạt tốc độ 20 Mbps. Trong thực tế, thời gian tải có thể lâu hơn do tốc độ mạng không ổn định hoặc có nhiều thiết bị cùng sử dụng mạng.
+PHẦN 3: PHÂN TÍCH PHẦN CỨNG
+Câu 5. Giải thích tại sao Swap trên HDD khiến hệ thống giật lag nghiêm trọng hơn so với SSD NVMe
+Trong trường hợp máy chủ chỉ có 8 GB RAM nhưng phải chạy đồng thời phần mềm thu thập dữ liệu cảm biến, phần mềm xử lý hình ảnh camera và ứng dụng gửi cảnh báo điện thoại, lượng RAM sử dụng có thể tăng cao. Khi RAM không còn đủ, hệ điều hành sẽ sử dụng bộ nhớ Swap (Page File), tức là dùng một phần ổ cứng để lưu tạm dữ liệu thay cho RAM.
+Tuy nhiên, tốc độ của ổ cứng HDD và SSD NVMe có sự khác biệt đáng kể.
+Tiêu chí
+HDD
+SSD NVMe
+Cách hoạt động
+Sử dụng đĩa quay và đầu đọc cơ học để truy xuất dữ liệu.
+Sử dụng bộ nhớ flash, không có bộ phận chuyển động.
+Tốc độ đọc/ghi
+Thường khoảng 100–200 MB/s đối với HDD thông dụng.
+Có thể đạt vài nghìn MB/s, tùy từng loại SSD.
+Khi sử dụng Swap
+Truy xuất dữ liệu chậm, đặc biệt khi phải đọc và ghi liên tục.
+Truy xuất dữ liệu nhanh hơn nhiều, giúp giảm thời gian chờ.
+Ảnh hưởng đến hệ thống
+Dễ khiến máy chủ bị chậm, giật lag khi phải sử dụng Swap thường xuyên.
+Giúp hệ thống phản hồi nhanh hơn so với HDD trong cùng điều kiện.
+
+Khi sử dụng HDD làm bộ nhớ Swap, hệ điều hành phải thường xuyên đọc và ghi dữ liệu trên ổ cứng. Do HDD có tốc độ truy xuất thấp và phụ thuộc vào các bộ phận cơ học nên việc chuyển dữ liệu giữa RAM và ổ cứng mất nhiều thời gian. Điều này có thể khiến phần mềm xử lý hình ảnh camera bị chậm, dữ liệu cảm biến được xử lý muộn và thông báo cảnh báo không được gửi kịp thời.
+Trong khi đó, SSD NVMe có tốc độ đọc và ghi cao hơn đáng kể nên việc truy xuất dữ liệu Swap nhanh hơn, giúp hạn chế tình trạng giật lag khi máy chủ thiếu RAM.
+Theo em, sử dụng SSD NVMe làm bộ nhớ Swap sẽ giúp máy chủ hoạt động tốt hơn so với HDD khi xảy ra tình trạng thiếu RAM. Tuy nhiên, Swap dù nhanh đến đâu cũng không thể thay thế hoàn toàn RAM. Vì vậy, máy chủ vẫn cần có đủ RAM để đáp ứng nhu cầu xử lý của các phần mềm đang chạy.
+KẾT LUẬN
+Qua bài tập, em hiểu rõ hơn cách hệ thống giám sát trang trại lan thông minh hoạt động và vai trò của từng bộ phận trong hệ thống. Cảm biến giúp thu thập dữ liệu, CPU xử lý thông tin, còn các thiết bị đầu ra thực hiện lệnh và gửi cảnh báo cho người quản lý. Bên cạnh đó, việc tính toán dung lượng lưu trữ và tốc độ truyền dữ liệu giúp xác định khả năng đáp ứng của hệ thống. Em cũng hiểu thêm rằng RAM, HDD và SSD NVMe đều có vai trò riêng, ảnh hưởng trực tiếp đến tốc độ xử lý. Việc lựa chọn phần cứng phù hợp sẽ giúp hệ thống hoạt động ổn định và hỗ trợ người quản lý chăm sóc trang trại hiệu quả hơn.
+
+

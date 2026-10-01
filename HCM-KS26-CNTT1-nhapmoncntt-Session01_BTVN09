@@ -1,0 +1,101 @@
+BÀI TẬP: PHÂN TÍCH VÀ THIẾT KẾ TÍNH NĂNG CHỤP ẢNH BẰNG CHỨNG GIAO HÀNG (POD) TẠI FASTSHIP
+PHẦN 1: PHÂN TÍCH IPO
+1. Xác định Input, Process, Output của tính năng chụp và lưu ảnh
+Dựa trên yêu cầu của FastShip, tính năng chụp ảnh bằng chứng giao hàng (POD) cần tiếp nhận ảnh từ tài xế, kiểm tra dữ liệu, tải ảnh lên máy chủ và lưu trữ để phục vụ việc xác minh đơn hàng.
+Thành phần
+Nội dung
+Mô tả
+Input (Đầu vào)
+Ảnh bằng chứng giao hàng
+Hai bức ảnh do tài xế chụp, gồm ảnh hàng hóa tại địa chỉ khách hàng và ảnh khách hàng ký nhận.
+
+
+Thông tin đơn hàng
+Mã đơn hàng, thời gian giao hàng, mã tài xế và trạng thái giao hàng.
+
+
+Thông tin ảnh
+Dung lượng, định dạng và dữ liệu ảnh được chụp từ điện thoại.
+Process (Xử lý)
+Kiểm tra dữ liệu
+Kiểm tra đơn hàng đã giao thành công, đủ hai ảnh và dung lượng mỗi ảnh không vượt quá 5 MB.
+
+
+Xử lý ảnh
+Nếu ảnh vượt quá 5 MB, hệ thống thực hiện nén hoặc giảm độ phân giải để đưa dung lượng về mức cho phép.
+
+
+Tải ảnh lên máy chủ
+Gửi hai ảnh cùng thông tin đơn hàng lên server, kiểm tra kết quả tải lên và xử lý nếu xảy ra lỗi.
+
+
+Lưu trữ
+Lưu ảnh và liên kết với mã đơn hàng để thuận tiện cho việc tra cứu.
+Output (Đầu ra)
+Ảnh POD
+Hai ảnh bằng chứng được lưu trữ trên server và gắn với đơn hàng tương ứng.
+
+
+Trạng thái xử lý
+Thông báo hoàn tất khi lưu thành công hoặc thông báo lỗi nếu chưa thể lưu ảnh.
+
+
+Thông tin xác nhận
+Thời gian lưu ảnh và thông tin xác nhận hoàn tất giao hàng.
+
+2. Mô tả luồng xử lý IPO
+INPUT (ĐẦU VÀO)
+Tài xế chụp 2 ảnh POD và cung cấp thông tin đơn hàng.
+PROCESS (XỬ LÝ)
+Kiểm tra ảnh và dung lượng, nén ảnh nếu vượt quá 5 MB, sau đó tải lên server và lưu trữ.
+OUTPUT (ĐẦU RA)
+Lưu thành công 2 ảnh POD, cập nhật trạng thái và xác nhận hoàn tất giao hàng.
+PHẦN 2: ĐỀ XUẤT GIẢI PHÁP VÀ TÍNH TOÁN DUNG LƯỢNG
+3. Đề xuất giải pháp xử lý khi ảnh vượt quá 5 MB
+Vấn đề: Một số điện thoại có độ phân giải cao có thể tạo ra ảnh có dung lượng lớn hơn 5 MB, khiến server từ chối lưu trữ và ảnh hưởng đến quá trình xác nhận giao hàng.
+Giải pháp đề xuất:
+Kiểm tra dung lượng ảnh: Ngay sau khi tài xế chụp ảnh, ứng dụng kiểm tra dung lượng của từng ảnh trước khi tải lên server.
+Tự động nén ảnh: Nếu ảnh vượt quá 5 MB, hệ thống tự động nén ảnh hoặc giảm độ phân giải để giảm dung lượng, đồng thời cố gắng giữ chất lượng đủ rõ để xác minh việc giao hàng.
+Kiểm tra lại dung lượng: Sau khi nén, hệ thống kiểm tra lại. Nếu ảnh đã đáp ứng giới hạn 5 MB thì cho phép tải lên server.
+Xử lý khi nén không thành công: Nếu ảnh vẫn vượt quá 5 MB, ứng dụng thông báo cho tài xế và yêu cầu chụp lại hoặc điều chỉnh ảnh.
+Xác nhận lưu trữ: Sau khi cả hai ảnh được tải lên và lưu thành công, hệ thống cập nhật trạng thái hoàn tất giao hàng và thông báo cho tài xế.
+Luồng xử lý khi ảnh vượt quá giới hạn
+Tài xế chụp ảnh
+Kiểm tra dung lượng ảnh
+Ảnh có dung lượng trên 5 MB?
+Không
+Tải ảnh lên server
+Có
+Nén hoặc giảm độ phân giải
+Kiểm tra lại dung lượng
+Nếu nén vẫn không đạt yêu cầu, thông báo để tài xế xử lý lại.
+Giải pháp này giúp hạn chế lỗi tải ảnh, giảm dung lượng lưu trữ và vẫn đảm bảo có đủ bằng chứng phục vụ việc xác minh đơn hàng.
+4. Tính toán dung lượng lưu trữ trong 1 tháng (30 ngày)
+Dữ liệu đề bài:
+Số đơn hàng mỗi ngày: 50.000 đơn.
+Số ảnh mỗi đơn hàng: 2 ảnh.
+Dung lượng trung bình mỗi ảnh: 3 MB.
+Thời gian tính: 30 ngày.
+Bước 1: Tính dung lượng ảnh của một đơn hàng.
+2×3=6 MB
+Mỗi đơn hàng cần trung bình 6 MB để lưu trữ hai ảnh POD.
+Bước 2: Tính tổng dung lượng ảnh trong một ngày.
+50.000×6=300.000 MB
+Vậy mỗi ngày, hệ thống cần lưu trữ trung bình 300.000 MB ảnh.
+Bước 3: Tính tổng dung lượng ảnh trong 30 ngày.
+300.000×30=9.000.000 MB
+Vậy trong 30 ngày, tổng dung lượng ảnh cần lưu trữ là 9.000.000 MB.
+Bước 4: Quy đổi sang TB.
+Theo cách quy đổi thập phân thường dùng trong lưu trữ:
+1 GB = 1.000 MB.
+1 TB = 1.000 GB.
+9.000.000÷1.000.000=9 TB
+KẾT QUẢ
+9 TB/tháng
+Dung lượng trung bình cho 50.000 đơn hàng mỗi ngày, trong 30 ngày.
+Nếu sử dụng cách quy đổi nhị phân với 1 GB = 1.024 MB và 1 TB = 1.024 GB thì kết quả xấp xỉ 8,58 TiB.
+Lưu ý: Kết quả 9 TB là dung lượng ước tính dựa trên mức trung bình 3 MB/ảnh, chưa tính dung lượng phát sinh do lưu trữ dữ liệu khác, bản sao lưu hoặc các chi phí vận hành của server.
+KẾT LUẬN
+Qua bài tập, em hiểu được cách vận dụng mô hình IPO để thiết kế quy trình xử lý ảnh POD, từ khâu tiếp nhận dữ liệu, kiểm tra, xử lý đến lưu trữ và xuất kết quả. Đối với trường hợp ảnh vượt quá 5 MB, hệ thống nên tự động nén và kiểm tra lại trước khi tải lên server. Với quy mô 50.000 đơn hàng mỗi ngày, FastShip cần dự kiến khoảng 9 TB dung lượng lưu trữ ảnh trong 30 ngày, đồng thời có kế hoạch dự phòng để đảm bảo hệ thống hoạt động ổn định.
+
+

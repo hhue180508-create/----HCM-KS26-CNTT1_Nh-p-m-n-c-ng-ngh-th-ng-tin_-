@@ -1,20 +1,19 @@
 BÀI TẬP: TÍNH TOÁN DUNG LƯỢNG LƯU TRỮ TRÊN SSD
 PHẦN 1: PHÂN TÍCH VẤN ĐỀ
 1. Xác định phép tính sai trong bảng
-Sau khi xem bảng tính, em nhận thấy phần quy đổi dung lượng của 1.000 ảnh bài giảng chưa được chính xác.
+em nhận thấy phần quy đổi dung lượng của 1.000 ảnh trong đề bài chưa đúng:
 Cụ thể, 1.000 ảnh, mỗi ảnh 4 MB, có tổng dung lượng là:
 4 × 1.000 = 4.000 MB
 Theo quy tắc 1 GB = 1.024 MB, ta có:
 4.000 ÷ 1.024 ≈ 3,91 GB
 Vậy nên dung lượng của 1.000 ảnh là khoảng 3,91 GB chứ không phải 4 GB như trong bảng ban đầu.
 2. Giải thích nguyên nhân dẫn đến sai lệch
-Nguyên nhân là do sinh viên đã quy đổi từ MB sang GB chưa đúng theo yêu cầu của đề bài. Thay vì chia cho 1.024, bảng tính đã sử dụng cách quy đổi gần đúng là 1.000 MB = 1 GB.
-Vì vậy, tổng dung lượng sử dụng và dung lượng còn trống trong bảng ban đầu có sự chênh lệch so với kết quả tính theo hệ số 1.024.
+Nguyên nhân là: do sinh viên đã quy đổi từ MB sang GB chưa đúng theo yêu cầu của đề bài. Thay vì chia cho 1.024 bảng tính đã sử dụng cách quy đổi gần đúng là 1.000 MB = 1 GB.
+Vì vậy, tổng dung lượng sử dụng và dung lượng còn trống trong bảng ban đầu có kết quả chênh lệch so với kết quả ban đầu 1.024.
 PHẦN 2: HOÀN THIỆN BÀI
 3. Tính lại tổng dung lượng sử dụng
-Đầu tiên, em tính lại dung lượng của từng hạng mục theo đúng quy tắc quy đổi.
-Hạng mục
-Cách tính
+Đầu tiên, em sẽ tính lại dung lượng của từng hạng mục theo đúng quy tắc quy đổi.
+Cách tính:
 Dung lượng
 Bộ công cụ lập trình
 40 × 1

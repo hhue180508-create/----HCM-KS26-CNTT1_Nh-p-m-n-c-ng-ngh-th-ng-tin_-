@@ -1,0 +1,76 @@
+BÀI TẬP: VẬN DỤNG THÁP DIKW TRONG PHÂN TÍCH NGHIỆP VỤ
+Chủ đề: Phân tích và tối ưu tuyến đường giao hàng tại FastShip.
+PHẦN 1: PHÂN TÍCH VẤN ĐỀ
+1. Chỉ ra điểm sai lệch trong cách phân loại DIKW hiện tại
+Qua bảng phân loại của FastShip, có thể thấy cả bốn tầng DIKW đều chưa được sắp xếp chính xác.
+Tầng DIKW
+Nội dung đang được phân loại
+Điểm sai lệch
+Data (Dữ liệu)
+Khách hàng A thường xuyên vắng nhà vào buổi sáng.
+Đây không còn là dữ liệu thô mà đã là kết quả tổng hợp, phân tích về thói quen của khách hàng.
+Information (Thông tin)
+1205, 50000, 0912345678.
+Đây là những dữ liệu thô, chưa có ngữ cảnh và chưa được xử lý thành thông tin có ý nghĩa.
+Knowledge (Tri thức)
+Đề xuất giao hàng cho khách A vào buổi chiều để tăng tỷ lệ thành công.
+Đây là một quyết định hoặc giải pháp được đưa ra dựa trên tri thức, phù hợp với tầng Wisdom hơn.
+Wisdom (Sự thông thái)
+Bảng thống kê số đơn giao trễ trong tháng.
+Đây là thông tin đã được tổng hợp và trình bày, chưa thể hiện việc vận dụng tri thức để đưa ra quyết định.
+
+2. Định nghĩa đúng về Data, Information, Knowledge và Wisdom
+Tầng DIKW
+Định nghĩa
+Vai trò trong phân tích nghiệp vụ
+Data (Dữ liệu)
+Là những con số, ký hiệu hoặc sự kiện thô được thu thập từ thực tế, chưa qua xử lý hoặc chưa có ngữ cảnh rõ ràng.
+Cung cấp dữ liệu đầu vào cho quá trình phân tích.
+Information (Thông tin)
+Là dữ liệu đã được xử lý, sắp xếp và đặt trong một ngữ cảnh cụ thể, giúp người dùng hiểu được sự việc.
+Giúp nhận biết tình hình, xác định các vấn đề đang xảy ra.
+Knowledge (Tri thức)
+Là sự hiểu biết được hình thành từ việc phân tích thông tin, kết hợp với kinh nghiệm để nhận ra quy luật và mối quan hệ giữa các sự kiện.
+Giúp giải thích nguyên nhân, nhận diện xu hướng và dự đoán kết quả.
+Wisdom (Sự thông thái)
+Là khả năng vận dụng tri thức, kinh nghiệm và sự cân nhắc để đưa ra quyết định phù hợp với mục tiêu thực tế.
+Giúp lựa chọn giải pháp và đưa ra quyết định nhằm đạt hiệu quả cao hơn.
+
+PHẦN 2: HOÀN THIỆN BÀI
+3. Sắp xếp lại 4 mệnh đề vào đúng các tầng của tháp DIKW
+Dựa trên định nghĩa của bốn tầng DIKW, em sắp xếp lại các nội dung trong đề bài như sau:
+Tầng DIKW
+Nội dung được phân loại đúng
+Giải thích
+Data (Dữ liệu)
+1205, 50000, 0912345678.
+Đây là những dữ liệu thô. Khi chưa có thông tin về ý nghĩa và nguồn gốc, chúng chưa thể hiện được một thông tin cụ thể.
+Information (Thông tin)
+Bảng thống kê số đơn giao trễ trong tháng.
+Dữ liệu về các đơn hàng đã được tổng hợp và sắp xếp thành bảng, giúp theo dõi tình hình giao hàng trong tháng.
+Knowledge (Tri thức)
+Khách hàng A thường xuyên vắng nhà vào buổi sáng.
+Qua việc phân tích lịch sử giao hàng, có thể nhận ra thói quen của khách hàng A, từ đó hình thành tri thức có thể áp dụng vào hoạt động giao hàng.
+Wisdom (Sự thông thái)
+Đề xuất giao hàng cho khách A vào buổi chiều để tăng tỷ lệ thành công.
+Đây là việc vận dụng tri thức về thói quen của khách hàng để đưa ra phương án giao hàng phù hợp, nhằm nâng cao tỷ lệ giao hàng thành công.
+
+Tóm tắt tháp DIKW
+WISDOM
+Đề xuất giao hàng buổi chiều
+KNOWLEDGE
+Nhận ra thói quen khách hàng
+INFORMATION
+Bảng thống kê đơn giao trễ
+DATA
+1205, 50000, 0912345678
+Quá trình chuyển đổi từ dữ liệu thô đến quyết định.
+4. Liên hệ với tình huống tối ưu tuyến đường giao hàng của FastShip
+Dựa trên hình ảnh trong đề bài, đội ngũ Data Analyst của FastShip đang sử dụng dữ liệu để phân tích và tối ưu tuyến đường giao hàng. Quá trình vận dụng DIKW có thể được hiểu như sau:
+Data: Thu thập dữ liệu về vị trí giao hàng, thời gian, quãng đường và chi phí nhiên liệu.
+Information: Tổng hợp dữ liệu thành các bảng thống kê, biểu đồ và báo cáo để theo dõi hiệu quả của từng tuyến đường.
+Knowledge: Phân tích các báo cáo để nhận biết tuyến đường thường xuyên bị chậm, tốn nhiều nhiên liệu hoặc có quãng đường di chuyển chưa hợp lý.
+Wisdom: Dựa trên kết quả phân tích để đề xuất tuyến đường phù hợp, giúp giảm thời gian giao hàng, tiết kiệm chi phí và nâng cao hiệu quả hoạt động.
+KẾT LUẬN
+Qua bài tập, em hiểu rằng tháp DIKW thể hiện quá trình chuyển đổi từ Dữ liệu → Thông tin → Tri thức → Sự thông thái. Mỗi tầng có vai trò riêng nhưng có mối liên hệ chặt chẽ với nhau. Đối với FastShip, vận dụng đúng tháp DIKW giúp đội ngũ Data Analyst không chỉ tổng hợp và phân tích dữ liệu mà còn có cơ sở để đề xuất những giải pháp tối ưu tuyến đường giao hàng, tiết kiệm chi phí và nâng cao chất lượng dịch vụ.
+

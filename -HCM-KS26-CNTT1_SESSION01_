@@ -1,0 +1,50 @@
+BÀI TẬP: TÍNH TOÁN DUNG LƯỢNG LƯU TRỮ TRÊN SSD
+PHẦN 1: PHÂN TÍCH VẤN ĐỀ
+1. Xác định phép tính sai trong bảng
+Sau khi xem bảng tính, em nhận thấy phần quy đổi dung lượng của 1.000 ảnh bài giảng chưa được chính xác.
+Cụ thể, 1.000 ảnh, mỗi ảnh 4 MB, có tổng dung lượng là:
+4 × 1.000 = 4.000 MB
+Theo quy tắc 1 GB = 1.024 MB, ta có:
+4.000 ÷ 1.024 ≈ 3,91 GB
+Vậy nên dung lượng của 1.000 ảnh là khoảng 3,91 GB chứ không phải 4 GB như trong bảng ban đầu.
+2. Giải thích nguyên nhân dẫn đến sai lệch
+Nguyên nhân là do sinh viên đã quy đổi từ MB sang GB chưa đúng theo yêu cầu của đề bài. Thay vì chia cho 1.024, bảng tính đã sử dụng cách quy đổi gần đúng là 1.000 MB = 1 GB.
+Vì vậy, tổng dung lượng sử dụng và dung lượng còn trống trong bảng ban đầu có sự chênh lệch so với kết quả tính theo hệ số 1.024.
+PHẦN 2: HOÀN THIỆN BÀI
+3. Tính lại tổng dung lượng sử dụng
+Đầu tiên, em tính lại dung lượng của từng hạng mục theo đúng quy tắc quy đổi.
+Hạng mục
+Cách tính
+Dung lượng
+Bộ công cụ lập trình
+40 × 1
+40 GB
+1.000 ảnh bài giảng
+(4 × 1.000) ÷ 1.024
+3,91 GB
+50 phim Full HD
+2 × 50
+100 GB
+Tổng dung lượng sử dụng
+40 + 3,91 + 100
+143,91 GB
+
+Tổng dung lượng đã sử dụng là:
+40 + 3,90625 + 100 = 143,90625 GB
+Vậy tổng dung lượng sử dụng khoảng 143,91 GB.
+4. Tính dung lượng còn trống của ổ cứng
+Ổ cứng SSD có dung lượng ban đầu là 256 GB. Sau khi lưu các phần mềm, ảnh và phim, dung lượng còn trống được tính như sau:
+256 − 143,90625 = 112,09375 GB
+Vậy ổ cứng còn trống khoảng 112,09 GB.
+5. Nếu lưu thêm 500 bài hát MP3 (5 MB/bài), ổ cứng còn đủ dung lượng không?
+Trước tiên, em tính tổng dung lượng của 500 bài hát:
+500 × 5 = 2.500 MB
+Quy đổi sang GB:
+2.500 ÷ 1.024 ≈ 2,44 GB
+Sau khi lưu thêm 500 bài hát, dung lượng còn trống của ổ cứng là:
+112,09375 − 2,44140625 ≈ 109,65 GB
+Như vậy, sau khi lưu thêm 500 bài hát MP3, ổ cứng vẫn còn khoảng 109,65 GB dung lượng trống.
+Kết luận: Ổ cứng SSD 256 GB vẫn đủ dung lượng để lưu thêm 500 bài hát MP3 mà không gặp vấn đề về dung lượng trong phạm vi dữ liệu của đề bài.
+KẾT LUẬN
+Qua đó , em nhận thấy việc quy đổi đơn vị lưu trữ cần được thực hiện chính xác để tránh bị nhầm lẫn khi tính toán. Sau khi tính lại theo hệ số 1.024, ổ cứng còn khoảng 112,09 GB trống và vẫn đủ chỗ để lưu thêm 500 bài hát MP3.
+

@@ -1,0 +1,41 @@
+BÀI TẬP: VẬN DỤNG THÁP DIKW TRONG PHÂN TÍCH NGHIỆP VỤ
+PHẦN 1: PHÂN TÍCH VẤN ĐỀ
+1. Chỉ ra điểm sai lệch trong cách phân loại DIKW hiện tại
+Báo cáo của FastShip đang phân loại sai cả bốn tầng DIKW. Cụ thể:
+Data: Đang xếp một nhận định về thói quen của khách hàng vào tầng dữ liệu, trong khi đây là thông tin đã được tổng hợp từ dữ liệu.
+Information: Đang xếp các con số thô vào tầng thông tin, trong khi chúng chưa có ngữ cảnh và ý nghĩa cụ thể.
+Knowledge: Đang xếp một đề xuất hành động vào tầng tri thức, trong khi đây là việc vận dụng kiến thức để đưa ra quyết định.
+Wisdom: Đang xếp bảng thống kê vào tầng sự thông thái, trong khi đây mới là thông tin đã được tổng hợp, chưa thể hiện quyết định hay hành động.
+2. Định nghĩa đúng về Data, Information, Knowledge và Wisdom
+Tầng DIKW
+Định nghĩa
+Data (Dữ liệu)
+Là những con số, ký hiệu hoặc sự kiện thô chưa được xử lý và chưa có ý nghĩa rõ ràng khi đứng riêng lẻ.
+Information (Thông tin)
+Là dữ liệu đã được xử lý, sắp xếp và đặt trong ngữ cảnh để có ý nghĩa cụ thể.
+Knowledge (Tri thức)
+Là sự hiểu biết được hình thành từ việc phân tích thông tin, nhận ra quy luật và rút ra kinh nghiệm.
+Wisdom (Sự thông thái)
+Là khả năng vận dụng tri thức, kinh nghiệm và bối cảnh để đưa ra quyết định hoặc hành động phù hợp.
+
+PHẦN 2: HOÀN THIỆN BÀI
+3. Sắp xếp lại bốn mệnh đề vào đúng các tầng DIKW
+Tầng DIKW
+Nội dung được phân loại đúng
+Giải thích
+Data (Dữ liệu)
+1205, 50000, 0912345678
+Đây là những dữ liệu thô, chưa có ngữ cảnh cụ thể để xác định ý nghĩa.
+Information (Thông tin)
+Bảng thống kê số đơn giao trễ trong tháng.
+Dữ liệu đã được tổng hợp và sắp xếp thành bảng, giúp nhận biết tình hình giao hàng.
+Knowledge (Tri thức)
+“Khách hàng A thường xuyên vắng nhà vào buổi sáng”.
+Đây là nhận định được rút ra từ việc phân tích lịch sử giao hàng của khách hàng.
+Wisdom (Sự thông thái)
+“Đề xuất giao hàng cho khách A vào buổi chiều để tăng tỷ lệ thành công”.
+Đây là quyết định vận dụng tri thức về thói quen của khách hàng để cải thiện hiệu quả giao hàng.
+
+Kết luận
+Tháp DIKW thể hiện quá trình chuyển đổi từ dữ liệu thô thành thông tin, từ thông tin hình thành tri thức và cuối cùng vận dụng tri thức để đưa ra quyết định. Đối với FastShip, việc áp dụng đúng mô hình DIKW giúp phân tích tình hình giao hàng, nhận biết thói quen khách hàng và đề xuất phương án tối ưu tuyến đường phù hợp.
+

@@ -1,0 +1,72 @@
+BÀI TẬP: PHÂN TÍCH HIỆU NĂNG MÁY TÍNH
+PHẦN 1: PHÂN TÍCH VÀ ĐỀ XUẤT GIẢI PHÁP
+1. Sơ đồ luồng IPO của một tab Chrome đang chạy
+Khi mở một tab Chrome, máy tính tiếp nhận dữ liệu từ người dùng, xử lý bằng CPU và sử dụng RAM để lưu tạm những dữ liệu cần thiết. Storage dùng để lưu trữ lâu dài.
+INPUT (Đầu vào)
+Người dùng mở tab Chrome, nhập địa chỉ trang web.
+PROCESS (Xử lý)
+CPU xử lý yêu cầu, giải mã và hiển thị nội dung trang web.
+RAM (Bộ nhớ tạm)
+Lưu dữ liệu và các tiến trình đang hoạt động của Chrome để CPU truy cập nhanh.
+OUTPUT (Đầu ra)
+Nội dung trang web được hiển thị trên màn hình.
+Storage (ổ cứng): Lưu hệ điều hành, Chrome, bộ nhớ đệm và các tệp tải xuống. Khi RAM thiếu, hệ thống có thể sử dụng một phần Storage làm bộ nhớ ảo (Page File).
+Vai trò của từng thành phần:
+CPU: Thực hiện các phép tính và xử lý dữ liệu để Chrome hoạt động.
+RAM: Lưu tạm dữ liệu của các tab đang mở, giúp CPU truy cập nhanh.
+Storage: Lưu trữ dữ liệu lâu dài và hỗ trợ bộ nhớ ảo khi RAM không đủ.
+2. Ba hành động giải phóng RAM ngay lập tức
+1. Đóng các tab Chrome không cần thiết: Giảm số lượng tab đang hoạt động để giải phóng RAM, đặc biệt là những tab chứa nhiều hình ảnh hoặc video.
+2. Tắt các ứng dụng chạy nền không cần thiết: Mở Task Manager, kiểm tra mức sử dụng RAM và kết thúc những ứng dụng không sử dụng. Không nên tắt các tiến trình hệ thống quan trọng.
+3. Khởi động lại Chrome hoặc máy tính: Lưu lại bài tập đang làm rồi khởi động lại Chrome để giải phóng bộ nhớ mà trình duyệt đang sử dụng. Nếu máy vẫn bị lag, có thể khởi động lại máy tính.
+3. Phân tích Swap/Page File và ảnh hưởng đến hiệu năng
+Swap/Page File là cơ chế sử dụng một phần ổ cứng làm bộ nhớ ảo khi RAM không còn đủ dung lượng. Windows có thể chuyển một số dữ liệu ít được sử dụng từ RAM sang Page File để dành RAM cho các tác vụ đang cần thiết.
+Ưu điểm: Giúp máy tính tiếp tục hoạt động khi RAM gần đầy, hạn chế tình trạng ứng dụng bị đóng đột ngột do thiếu bộ nhớ.
+Nhược điểm: Tốc độ truy xuất dữ liệu trên ổ cứng chậm hơn RAM rất nhiều. Khi phải sử dụng bộ nhớ ảo thường xuyên, máy tính có thể bị giật, lag và phản hồi chậm.
+So sánh HDD và SSD NVMe khi RAM đạt 98%
+Tiêu chí
+HDD
+SSD NVMe
+Tốc độ đọc, ghi
+Chậm
+Nhanh
+Truy xuất Page File
+Mất nhiều thời gian
+Nhanh hơn đáng kể
+Mức độ giật, lag
+Có thể rất rõ
+Thường ít hơn
+Hiệu năng khi thiếu RAM
+Giảm mạnh
+Đỡ bị ảnh hưởng hơn
+
+Dự đoán: Với 30 tab Chrome và RAM đạt 98%, máy dùng HDD có thể bị giật lag nghiêm trọng do phải truy xuất dữ liệu từ Page File thường xuyên. Nếu dùng SSD NVMe, máy thường phản hồi nhanh hơn trong cùng điều kiện. Tuy nhiên, SSD NVMe không thể thay thế hoàn toàn RAM. Nếu thiếu RAM quá nhiều, cả hai loại ổ cứng đều có thể khiến máy hoạt động chậm.
+PHẦN 2: TRIỂN KHAI
+3. Báo cáo chẩn đoán sức khỏe máy tính
+Mẫu báo cáo cần điền theo Task Manager thực tế
+Tình huống kiểm tra: Mở 30 tab Chrome để làm bài tập nhóm, máy tính xuất hiện hiện tượng giật lag.
+Thông số
+Giá trị
+Nhận xét
+CPU
+...%
+Cần kiểm tra mức độ bận của CPU khi mở nhiều tab.
+RAM
+98%
+Gần đầy, có thể là nguyên nhân chính gây giật lag.
+Disk
+...%
+Nếu thường xuyên đạt 100%, có thể máy đang bị nghẽn truy xuất ổ cứng.
+
+Kết luận:
+Máy tính đang có dấu hiệu quá tải bộ nhớ RAM khi mở nhiều tab Chrome cùng lúc. Nếu RAM thường xuyên đạt 98%, hệ điều hành có thể phải sử dụng Page File, khiến máy phản hồi chậm, đặc biệt khi sử dụng HDD. Cần đóng bớt tab, tắt ứng dụng không cần thiết và theo dõi lại các thông số CPU, RAM, Disk để đánh giá tình trạng máy sau khi xử lý.
+Cách lấy số liệu thực tế
+Nhấn Ctrl + Shift + Esc để mở Task Manager.
+Chọn mục Processes hoặc Performance.
+Ghi lại phần trăm CPU, RAM và Disk tại thời điểm máy đang mở các tab Chrome.
+Điền các số liệu vào bảng báo cáo phía trên.
+
+
+
+
+
